@@ -1,0 +1,11 @@
+.input-box{
+    border: 1px solid #dadada;
+    border-top-left-radius: 0.5rem ;
+    border-bottom-left-radius: 0.5rem ;
+    padding-left: 0.5rem;
+    
+}
+
+.input-box:hover {
+    border: 1.2px solid #864879;
+}

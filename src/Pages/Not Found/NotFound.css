@@ -1,0 +1,17 @@
+
+.not-found-container {
+  display: flex;
+  flex-direction: column;
+}
+img {
+  width: 350px;
+  align-self: center;
+}
+
+h2 {
+  margin: 3rem;
+}
+
+#not-found-title {
+  color: red;
+}

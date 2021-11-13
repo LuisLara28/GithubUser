@@ -1,0 +1,33 @@
+.loader {
+    display: flex;
+    justify-content: center;
+}
+
+.loader h1 {
+    align-self: center;
+    margin-left: .5rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+.spinner {
+    border: 12px solid rgba(9, 89, 143, 0.1);
+    border-left-color: transparent;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    border-left-color: rgb(225, 0, 255);
+
+    animation: spin 0.9s linear infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+  
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  
