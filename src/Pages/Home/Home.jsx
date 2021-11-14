@@ -12,6 +12,7 @@ const Home = () => {
     const [userName, setUserName] = useState("")
     const [userInformation, setUserInformation] = useState(null)
     const [isLoading, setIsLoading] = useState(false)
+    const [error, setError] = useState(null)
 
     //Functions
     const handleUserName = ({ value }) => {
@@ -26,14 +27,16 @@ const Home = () => {
             const API = `https://api.github.com/users/${userName}`
             const response = await fetch(API)
             const result = await response.json();
-            console.log(result);
-            setUserInformation(result)
-            setIsLoading(false)
-            
-            
+
+            if (result.message === "Not Found") {
+                setError(true)
+            } else {
+                setUserInformation(result)
+            }
         } catch (error) {
-            
+            console.log(error)
         }
+        setIsLoading(false)
     }
 
 
@@ -54,7 +57,7 @@ const Home = () => {
                             repos={userInformation.public_repos}
                             avatar={userInformation.avatar_url}
                             bio={userInformation.bio}
-                        /> : null
+                        /> : error ? (<h1 className="mt-14 text-4xl font-bold">Error: User Not Found</h1>) : null
                 }
 
                 {isLoading && <Loader />}

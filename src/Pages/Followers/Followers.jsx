@@ -31,7 +31,7 @@ const Followers = () => {
 
     return (
         <div>
-            <h2 className="absolute left-2 top-0 m-0 font-bold"><Link to="/">Regresar</Link></h2>
+            <h2 className=" bg-purple rounded-lg p-4 mt-2 text-white absolute left-2 top-0 m-0 font-bold text-xl"><Link to="/">Regresar</Link></h2>
             <h4 className="text-2xl p-8"><span className="font-bold text-peach">{user}</span> Followers</h4>
             
             {followers && followers.length > 0 && !loader ? (
